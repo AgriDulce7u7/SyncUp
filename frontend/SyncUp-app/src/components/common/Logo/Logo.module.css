@@ -1,0 +1,126 @@
+/* Logo Animado SyncUp */
+
+.logo-circles {
+  position: relative;
+  width: 256px;
+  height: 256px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.logo-circles.small {
+  width: 64px;
+  height: 64px;
+}
+
+.logo-circles.medium {
+  width: 128px;
+  height: 128px;
+}
+
+.logo-wave-outer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, #3b82f6, #9333ea);
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: pulse-wave 2s ease-in-out infinite;
+}
+
+.logo-wave-middle {
+  position: absolute;
+  top: 16.67%;
+  right: 16.67%;
+  bottom: 16.67%;
+  left: 16.67%;
+  background: linear-gradient(to bottom right, #3b82f6, #9333ea);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: pulse-wave-middle 2s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.logo-core {
+  position: absolute;
+  top: 33.33%;
+  right: 33.33%;
+  bottom: 33.33%;
+  left: 33.33%;
+  background: linear-gradient(to bottom right, #2563eb, #7e22ce);
+  border-radius: 50%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-equalizer {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.logo-bar {
+  width: 8px;
+  background-color: white;
+  border-radius: 9999px;
+  animation: pulse-bar 1.5s ease-in-out infinite;
+}
+
+.logo-bar-1 { height: 48px; animation-delay: 0s; }
+.logo-bar-2 { height: 80px; animation-delay: 0.2s; }
+.logo-bar-3 { height: 64px; animation-delay: 0.4s; }
+.logo-bar-4 { height: 96px; animation-delay: 0.1s; }
+.logo-bar-5 { height: 56px; animation-delay: 0.3s; }
+
+@keyframes pulse-wave {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-wave-middle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-bar {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleY(0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-circles {
+    width: 180px;
+    height: 180px;
+  }
+
+  .logo-bar {
+    width: 6px;
+  }
+
+  .logo-bar-1 { height: 34px; }
+  .logo-bar-2 { height: 56px; }
+  .logo-bar-3 { height: 45px; }
+  .logo-bar-4 { height: 68px; }
+  .logo-bar-5 { height: 39px; }
+}
